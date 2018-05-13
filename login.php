@@ -4,7 +4,7 @@ $email = $_POST['email'];
 $username = $_POST['username'];
 $password = ($_POST['password']);
 
-$login = mysqli_query($conn,"SELECT * FROM akun WHERE email='$email'and username='$username' and password='$password'");
+$login = mysqli_query($conn,"SELECT * FROM akun WHERE username='$username' and password='$password'");
 
 $cek = mysqli_num_rows($login);
 echo $cek;
