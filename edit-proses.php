@@ -7,10 +7,7 @@ if (isset($_POST['edit'])) {
   $perihal	= $_POST['perihal'];
   $asal	= $_POST['asal'];
 
-  $query  = "UPDATE masuk SET ";
-  $query .= "tanggal = '$tanggal', perihal = '$perihal', ";
-  $query .= "asal='$asal', ";
-  $query .= "WHERE kode = '$kode'";
+  $query  = "UPDATE masuk SET tanggal='$tanggal', perihal='$perihal', asal='$asal' where kode='$kode'";
 
   $result = mysqli_query($conn, $query);
 

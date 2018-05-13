@@ -75,8 +75,8 @@ include 'koneksi.php';
             echo "<td><center><b>$data[asal]</td>";  
     
             echo '<td><center><b>
-                <a href="edit.php?id='.$data['kode'].'">Edit</a> /
-                <a href="hapus.php?id='.$data['kode'].'"
+                <a href="edit.php?kode='.$data['kode'].'">Edit</a> /
+                <a href="hapus.php?kode='.$data['kode'].'"
                     onclick="return confirm(\'Hapus data?\')">Hapus</a>
             </td>';
             echo "</tr>";

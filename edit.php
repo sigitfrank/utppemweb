@@ -14,7 +14,7 @@
     $asal = $data["asal"];
 
   } else {
-    header("location:edit.php");
+    header("location:home.php");
   }
 ?>
 
