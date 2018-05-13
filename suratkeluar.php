@@ -1,4 +1,5 @@
 <?php
+include 'koneksi.php';
 ?>
 <html>
     <style>
@@ -39,7 +40,48 @@
         </nav>
     </div>
     </header>
+    <br>
+    <center><h2>Surat Keluar</h2></center>
+    <br><br><br>
+    <center><a href="input-keluar.php"><font color="black">Tambah Surat &Gt; </font></a></center>
+    <table border="1">
+        <tr>
+            <td><center><h5><b>No</td>
+            <td><center><h5><b>Kode</td>
+            <td><center><h5><b>Tanggal</td>
+            <td><center><h5><b>Perihal</td>
+            <td><center><h5><b>Tujuan Surat</td>
+            <td><center><h5><b>Tindakan</td>
+        </tr>
 
+        <?php
+            $query = "SELECT * FROM keluar";
+            $result = mysqli_query($conn, $query);
+            if(!$result){
+                die ("Query Error: ".mysqli_errno($conn).
+                " - ".mysqli_error($conn));
+            }
+
+            $no = 1; 
+            while($data = mysqli_fetch_assoc($result))
+            {
+
+            echo "<tr>";
+            echo "<td><center><b>$no</td>"; 
+            echo "<td><center><b>$data[kode]</td>"; 
+            echo "<td><center><b>$data[tanggal]</td>"; 
+            echo "<td><center><b>$data[perihal]</td>"; 
+            echo "<td><center><b>$data[tujuan]</td>";  
+    
+            echo '<td><center><b>
+                <a href="edit-keluar.php?kode='.$data['kode'].'">Edit</a> /
+                <a href="hapus-keluar.php?kode='.$data['kode'].'"
+                    onclick="return confirm(\'Hapus data?\')">Hapus</a>
+            </td>';
+            echo "</tr>";
+            $no++;
+        }
+        ?>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
