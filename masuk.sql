@@ -1,0 +1,1 @@
+create TABLE masuk (kode int(5) not null primary KEY, tanggal date, perihal varchar (100), asal varchar (25))

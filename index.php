@@ -4,6 +4,7 @@
 	<?php
 	include 'koneksi.php';
 	?>
+	
 	<link rel="stylesheet" href="style.css">
 	</head>
 	
@@ -16,7 +17,7 @@
 			<input type="text"  name="email" class="textbox" placeholder="Email"></input>
 			<input type="text"  name="username" class="textbox" placeholder="Username"></input>
 			<input type="password"  name="password" class="textbox" placeholder="Password"></input
-			<span style="padding-left:2em"><input type="submit" name="login" size="5px" value="Login" id="button"><span>
+			<span style="padding-left:2em"><input type="submit" name="login" size="5px" value="Login" id="button"></span>
 			<font size="3px" color="white"></a>Don't have an account?<span style="padding-left:0.5em"><a href=buatakun.php><font size="3px" color="white">Create Here!</a>		
 				
 			</center>
